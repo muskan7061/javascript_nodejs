@@ -1,15 +1,14 @@
 import { EventEmitter } from 'events'; // Import using ESM
 import express from "express"
-const app = express()
-const PORT = 3000
-// import fs from 'fs'
-// //1
+// const app = express()
+// const PORT = 3000
+//import fs from 'fs'
 const eventEmitter = new EventEmitter();
-// eventEmitter.on('greet', (name) => {
-//     console.log(`Hello, ${name}!`);
-// });
+eventEmitter.on('greet', (name) => {
+    console.log(`Hello, ${name}!`);
+});
 
-// eventEmitter.emit('greet', 'Alice');
+eventEmitter.emit('greet', 'Alice');
 
 
 // //2
@@ -46,16 +45,16 @@ const eventEmitter = new EventEmitter();
 //4
 // Remove all Listner
 
-eventEmitter.on('test', () => console.log("Test event!"));
-eventEmitter.on('test', () => console.log("Another test event!"));
+// eventEmitter.on('test', () => console.log("Test event!"));
+// eventEmitter.on('test', () => console.log("Another test event!"));
 
 // eventEmitter.emit('test');
 // Output: Test event!
 // Output: Another test event!
 
-eventEmitter.removeAllListeners('test');
+// eventEmitter.removeAllListeners('test');
 
-eventEmitter.emit('test'); // No output
+// eventEmitter.emit('test'); // No output
 
 
 //5
